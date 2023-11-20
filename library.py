@@ -40,10 +40,22 @@ class Grafo:
     
     # c) Função que retorna a vizinhança de um vértice v, ou seja, os vértices adjacentes a v
     def viz(self, vertice):
+        
+                
+        linha = self.matrizAdjacencia[vertice - 1]
+        
+        
+        
+        adjacentes = []
         for i in range(self.qtdVertices):
-            if(self.matrizAdjacencia[vertice - 1][i] == 1):
-                return self.matrizAdjacencia[vertice - 1][i] 
+            if linha[i] == 1:
+                adjacentes.append(i + 1)
+                
+        return adjacentes
+
+        
         pass
+        
     
     
 
@@ -56,7 +68,8 @@ g.adicionaAresta(4,2)
 g.mostrarMatriz(g.matrizAdjacencia)
 print("Quantidade de vertices: ",g.n())
 print("Quantidade de arestas: ",g.m())
-print(g.viz(3))
+#print(g.viz(1))
+print(g.viz(2))
 
 
 
